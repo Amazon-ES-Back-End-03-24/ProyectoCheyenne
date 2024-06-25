@@ -1,60 +1,64 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 
+
+import java.util.List;
+
+@Getter
 @Entity
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idProduct;
 
     private String name;
-    private String description;
-    private BigDecimal price;
-    private int quantity;
 
-    public Long getId() {
-        return id;
+    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
+    private Inventory inventory;
+
+    @ManyToMany(mappedBy = "wishlist")
+    private List<Customer> customers;
+
+
+
+    public Product() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Product(String name) {
+        this.name = name;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public String getName() {
-        return name;
+    public void setIdProduct(Long idProduct) {
+        this.idProduct = idProduct;
     }
 
     public void setName(String name) {
         this.name = name;
     }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "idProduct=" + idProduct +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
+
+

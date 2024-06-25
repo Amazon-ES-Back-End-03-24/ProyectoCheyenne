@@ -1,33 +1,46 @@
 package entities;
 
+
 import jakarta.persistence.*;
 
 @Entity
 public class Inventory {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idInventory;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
+    private int availableQuantity;
+
+    @OneToOne
+    @JoinColumn(name = "id_product")
     private Product product;
 
-    private int quantityAvailable;
 
-    public Long getId() {
-        return id;
+
+    public Inventory() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Inventory(int availableQuantity) {
+        this.availableQuantity = availableQuantity;
     }
 
-    public int getQuantityAvailable() {
-        return quantityAvailable;
+
+
+    public Long getIdInventory() {
+        return idInventory;
     }
 
-    public void setQuantityAvailable(int quantityAvailable) {
-        this.quantityAvailable = quantityAvailable;
+    public void setIdInventory(Long idInventory) {
+        this.idInventory = idInventory;
+    }
+
+    public int getAvailableQuantity() {
+        return availableQuantity;
+    }
+
+    public void setAvailableQuantity(int availableQuantity) {
+        this.availableQuantity = availableQuantity;
     }
 
     public Product getProduct() {
@@ -36,5 +49,24 @@ public class Inventory {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Inventory{" +
+                "idInventory=" + idInventory +
+                ", availableQuantity=" + availableQuantity +
+                '}';
+    }
+
+    public void setName(String s) {
+    }
+
+    public String getName() {
+
+
+        return null;
     }
 }
