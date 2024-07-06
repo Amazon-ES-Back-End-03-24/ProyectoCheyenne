@@ -3,7 +3,7 @@ package com.ironhack.inventorytool.controllers;
 
 
 
-import entities.Inventory;
+import com.ironhack.inventorytool.entities.Inventory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import repositories.InventoryRepository;
+import com.ironhack.inventorytool.repositories.InventoryRepository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

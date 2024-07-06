@@ -1,12 +1,11 @@
 package com.ironhack.inventorytool.services;
 
-import entities.Inventory;
+import com.ironhack.inventorytool.entities.Inventory;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import repositories.InventoryRepository;
-import services.InventoryService;
+import com.ironhack.inventorytool.repositories.InventoryRepository;
 
 import java.util.Optional;
 

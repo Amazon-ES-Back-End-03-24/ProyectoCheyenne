@@ -1,11 +1,10 @@
 package com.ironhack.inventorytool.repositories;
 
 
-import entities.Inventory;
+import com.ironhack.inventorytool.entities.Inventory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import repositories.InventoryRepository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,7 +14,7 @@ public class InventoryRepositoryTest {
     @Autowired
     private InventoryRepository inventoryRepository;
 
-    @Test
+   @Test
     public void testFindByName() {
         Inventory inventory = new Inventory();
         inventory.setName("Warehouse 1");
