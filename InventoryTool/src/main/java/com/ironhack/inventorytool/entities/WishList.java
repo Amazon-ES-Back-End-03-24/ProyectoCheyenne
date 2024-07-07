@@ -1,7 +1,7 @@
 package com.ironhack.inventorytool.entities;
 
 import jakarta.persistence.*;
-
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,7 +20,16 @@ public class WishList {
             joinColumns = @JoinColumn(name = "wishlist_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
-    private List<Product> products;
+    private List<Product> products = new ArrayList<>();
+
+
+    public WishList() {
+    }
+
+
+    public WishList(Customer customer) {
+        this.customer = customer;
+    }
 
     // Getters y Setters
     public Long getId() {

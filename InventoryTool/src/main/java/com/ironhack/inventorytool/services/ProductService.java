@@ -56,7 +56,7 @@ public class ProductService {
             existingProduct.setPrice(product.getPrice());
             existingProduct.setQuantity(product.getQuantity());
             existingProduct.setWishListCount(product.getWishListCount());
-            existingProduct.setInventoryManager(product.getInventoryManager());
+           // existingProduct.setInventoryManager(product.getInventoryManager());
             return productRepository.save(existingProduct);
         } else {
             return null;

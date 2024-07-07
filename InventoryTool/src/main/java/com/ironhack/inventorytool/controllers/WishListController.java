@@ -1,7 +1,7 @@
 package com.ironhack.inventorytool.controllers;
 
-import com.ironhack.inventorytool.entities.WishList;
 import com.ironhack.inventorytool.services.WishListService;
+import com.ironhack.inventorytool.entities.WishList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,27 +28,9 @@ public class WishListController {
     public WishList getWishListByCustomerId(@PathVariable Long customerId) {
         return wishListService.getWishListByCustomerId(customerId);
     }
-}
 
-// Clase para recibir la solicitud
-class AddToWishListRequest {
-    private Long customerId;
-    private Long productId;
-
-    // Getters y Setters
-    public Long getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
-    }
-
-    public Long getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    @DeleteMapping("/remove")
+    public WishList removeProductFromWishList(@RequestBody AddToWishListRequest request) {
+        return wishListService.removeProductFromWishList(request.getCustomerId(), request.getProductId());
     }
 }

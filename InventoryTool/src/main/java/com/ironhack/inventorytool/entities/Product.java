@@ -13,9 +13,10 @@ public class Product {
     private Integer quantity;
     private Integer wishListCount;
 
-    @ManyToOne
-    //@JoinColumn(name = "id_manager") // Ajusta esta columna si es necesario
-    private InventoryManager inventoryManager;
+    // Elimina la relación con InventoryManager
+    // @ManyToOne
+    // @JoinColumn(name = "id_manager")
+    // private InventoryManager inventoryManager;
 
     // Getters y Setters
     public Long getId() {
@@ -58,11 +59,11 @@ public class Product {
         this.wishListCount = wishListCount;
     }
 
-    public InventoryManager getInventoryManager() {
-        return inventoryManager;
-    }
+    // public InventoryManager getInventoryManager() {
+    //     return inventoryManager;
+    // }
 
-    public void setInventoryManager(InventoryManager inventoryManager) {
-        this.inventoryManager = inventoryManager;
-    }
+    // public void setInventoryManager(InventoryManager inventoryManager) {
+    //     this.inventoryManager = inventoryManager;
+    // }
 }
