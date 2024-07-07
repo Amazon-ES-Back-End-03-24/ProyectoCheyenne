@@ -12,7 +12,10 @@ Este proyecto es una herramienta de inventario desarrollada para gestionar produ
 
 Para configurar y ejecutar este proyecto, sigue estos pasos:
 
-
+1. Clona el repositorio:
+    ```sh
+    git clone https://github.com/tu-usuario/inventory-tool.git
+    ```
 
 2. Navega al directorio del proyecto:
     ```sh
@@ -22,8 +25,8 @@ Para configurar y ejecutar este proyecto, sigue estos pasos:
 3. Configura tu base de datos en `application.properties`:
     ```properties
     spring.datasource.url=jdbc:mysql://localhost:3306/inventory_db
-    spring.datasource.username=root	
-    spring.datasource.password=password
+    spring.datasource.username=tu_usuario
+    spring.datasource.password=tu_contraseña
     ```
 
 4. Ejecuta el proyecto utilizando Maven:
@@ -43,7 +46,7 @@ Para configurar y ejecutar este proyecto, sigue estos pasos:
 ## Estructura de controladores y rutas
 
 - **AuthController**: Maneja la autenticación y autorización de usuarios.
-  - `POST /api/login`: Iniciar sesión.
+  - `POST /auth/login`: Iniciar sesión.
 
 - **WishListController**: Maneja las listas de deseos de los clientes.
   - `POST /wishlist/add`: Añadir producto a la lista de deseos.
@@ -51,7 +54,14 @@ Para configurar y ejecutar este proyecto, sigue estos pasos:
   - `GET /wishlist`: Obtener todas las listas de deseos.
   - `GET /wishlist/{customerId}`: Obtener la lista de deseos de un cliente por ID.
 
+- **OrderController**: Maneja las órdenes de los clientes.
+  - (Rutas de ejemplo)
 
+- **ProductController**: Maneja los productos del inventario.
+  - (Rutas de ejemplo)
+
+- **UserController**: Maneja los usuarios del sistema.
+  - (Rutas de ejemplo)
 
 ## Enlaces adicionales
 https://slides.com/cheyennesaiz/bento/scroll#/our-services
@@ -71,17 +81,7 @@ Me gustaría seguir capacitándome en desarrollo de software. Mis próximos obje
 ## Miembros del equipo
 
 - Cheyenne Saiz Aguado
--Andres
--Marco
--Miguel Angel
--Adrian
--Lourdes
--Fran
--Mohammed
--Isaac
--Raul
--Laura
--Lisa
+
 
 
 ---
